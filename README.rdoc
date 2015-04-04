@@ -1,7 +1,7 @@
 == Clutch
 
 This is Clutch, a competitive gaming website for gamers to create their clans and challenge other clans in various ladders across different games to matches.
-The languages and frameworks used are :
+The languages and frameworks used are:
 
 - Rails API
 - Ruby
