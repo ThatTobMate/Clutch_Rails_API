@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150324150807) do
+ActiveRecord::Schema.define(version: 20150404130237) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,11 @@ ActiveRecord::Schema.define(version: 20150324150807) do
     t.text     "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "clans_users", id: false, force: :cascade do |t|
+    t.integer "clan_id", null: false
+    t.integer "user_id"
   end
 
   create_table "comments", force: :cascade do |t|
@@ -68,6 +73,11 @@ ActiveRecord::Schema.define(version: 20150324150807) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "user_connections", id: false, force: :cascade do |t|
+    t.integer "user_a_id", null: false
+    t.integer "user_b_id", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "provider",                            null: false
     t.string   "uid",                    default: "", null: false
@@ -95,6 +105,5 @@ ActiveRecord::Schema.define(version: 20150324150807) do
 
   add_index "users", ["email"], name: "index_users_on_email", using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
-  add_index "users", ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true, using: :btree
 
 end

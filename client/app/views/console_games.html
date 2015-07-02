@@ -1,10 +1,8 @@
 <h1>GAMES LIST</h1>
 
 
-<div ng-repeat="gp in gamespage">
-<a ng-href="#/consoles/{{param1}}/{{gp.name}}">{{gp.name}}</a>
-{{gp.$id}}
+<div ng-repeat="game in games">
+<a ng-href="#/{{consoleParam}}/{{game.id}}">{{game.name}}</a>
 {{games}}
 </div>
 
-{{param1}}

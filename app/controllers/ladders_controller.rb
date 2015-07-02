@@ -15,6 +15,11 @@ class LaddersController < ApplicationController
     render json: @ladder
   end
 
+  def get_clans
+    t = Clan.where(ladder_id: params[:id])
+    render json: t
+  end
+
   # POST /ladders
   # POST /ladders.json
   def create

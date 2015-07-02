@@ -14,7 +14,9 @@ Rails.application.routes.draw do
     match 'users/the_current_user' => 'users#the_current_user', :via => [:get]
     match 'users/index' => 'users#index', :via => [:get]
     match 'users/who_user' => 'users#who_user', :via => [:post]
-    match 'games/get_games' => 'games#get_games', :via => [:get]
+    match 'games/get_games' => 'games#get_games', :via => [:post]
+    match 'games/get_ladders/:id' => 'games#get_ladders', :via => [:get]
+    match 'ladders/get_clans' => 'ladders#get_clans', :via => [:post]
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

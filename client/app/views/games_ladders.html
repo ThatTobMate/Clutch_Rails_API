@@ -1,9 +1,7 @@
 <h1>Ladders</h1>
 
-{{param2}}
+<h1>{{game.name}}</h1>
+<div ng-repeat="ladder in game.ladders">
+  <a ng-href="#{{url}}/{{ladder.id}}">{{ladder.name}}</a>
+</div>
 
-<p>hello</p>
-
-{{ladders}}
-
-{{ladderspage}}

@@ -16,8 +16,15 @@ class GamesController < ApplicationController
   end
 
   def get_games
-    @games = Game.where(console_id: params[:id])
-    render json: @games
+    c = Console.where(name: params[:id])
+    @games = Game.where(console_id: c[0].id)
+    render json: @games.to_json(include: :ladders)
+  end
+
+  def get_ladders
+    # binding.pry
+    game = Game.find(params[:id])
+    render json: game.to_json(include: :ladders)
   end
 
   # POST /games

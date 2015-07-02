@@ -48,13 +48,17 @@
         templateUrl: 'views/console_games.html',
         controller: 'GamesCtrl'
       })
-      .when('/consoles/:consoleName/:gameTitle', {
+      .when('/:consoleName/:gameId', {
         templateUrl: 'views/games_ladders.html',
-        controller: 'ConsolesCtrl'
+        controller: 'GamesCtrl'
       })
-      .when('/consoles/:consoleName/:gameTitle/:ladderId', {
+      .when('/:consoleName/:gameTitle/:ladderId', {
         templateUrl: 'views/ladder.html',
-        controller: 'ConsolesCtrl'
+        controller: 'LaddersCtrl'
+      })
+      .when('/:consoleName/:gameId/:ladderId/:clanId', {
+        templateUrl: 'views/team.html',
+        controller: 'ClansCtrl'
       })
       .when('/consoles/:consoleName/:gameTitle/:ladderId/create', {
         templateUrl: 'views/create_team.html',
@@ -62,10 +66,6 @@
       })
       .when('/consoles/:consoleName/:gameTitle/:ladderId/rules', {
         templateUrl: 'views/rules.html',
-        controller: 'ConsolesCtrl'
-      })
-      .when('/consoles/:consoleName/:gameTitle/:ladderId/:teamId', {
-        templateUrl: 'views/team.html',
         controller: 'ConsolesCtrl'
       })
       .when('/consoles/:consoleName/:gameTitle/:ladderId/:teamId/results', {
